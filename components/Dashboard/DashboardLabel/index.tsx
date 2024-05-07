@@ -24,7 +24,7 @@ function Component() {
             }
             className={styles.wrapper}
         >
-            Testnet TYRON
+            L$VE MONEY
         </div>
     )
 }

@@ -34,7 +34,7 @@ export class SSIVault {
 
         if (
             exactToken.meta.symbol === 'BTC' &&
-            limitToken.meta.symbol === 'SU$D'
+            limitToken.meta.symbol === '$RNT'
         ) {
             return VaultDirection.Mint
         } else {
@@ -42,7 +42,7 @@ export class SSIVault {
         }
     }
 
-    public computeSU$D(pair: VaultPair[], xr: number) {
+    public compute$RNT(pair: VaultPair[], xr: number) {
         const [exactToken, limitToken] = pair
         const input = exactToken.value
 

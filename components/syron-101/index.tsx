@@ -45,7 +45,7 @@ function Component() {
             value: _0,
             meta: {
                 name: 'Syron U$D',
-                symbol: 'SU$D',
+                symbol: '$RNT',
                 decimals: 8,
             },
         },

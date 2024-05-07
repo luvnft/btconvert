@@ -46,7 +46,7 @@ type Mode = variant {
     ReadOnly;
     // Only specified principals can modify minter's state.
     RestrictedTo : vec principal;
-    // Only specified principals can deposit BTC to get SU$D.
+    // Only specified principals can deposit BTC to get $RNT.
     DepositsRestrictedTo : vec principal;
     // Anyone can interact with the minter.
     GeneralAvailability;
@@ -62,7 +62,7 @@ type InitArgs = record {
     // the minting account of the ledger.
     ledger_id : principal;
     
-    // The principal of the Syron Ledger that handles SU$D transfers.
+    // The principal of the Syron Ledger that handles $RNT transfers.
     // The default account of the Syron Minter must be configured as
     // the minting account of the ledger.
     susd_id : principal;
@@ -74,7 +74,7 @@ type InitArgs = record {
     // E.g., "dfx_test_key" on the local replica.
     ecdsa_key_name : text;
 
-    // The minimal amount of SU$D that can be used to unlock BTC.
+    // The minimal amount of $RNT that can be used to unlock BTC.
     retrieve_btc_min_amount : nat64;
 
     /// Maximum time in nanoseconds that a transaction should spend in the queue
@@ -97,7 +97,7 @@ type InitArgs = record {
 
 // The upgrade parameters of the Syron Minter canister.
 type UpgradeArgs = record {
-    // The minimal amount of SU$D that the minter requests to unlock BTC.
+    // The minimal amount of $RNT that the minter requests to unlock BTC.
     retrieve_btc_min_amount : opt nat64;
 
     /// Maximum time in nanoseconds that a transaction should spend in the queue
@@ -133,11 +133,11 @@ type UtxoStatus = variant {
     // The KYT provider considered this UTXO to be tainted. This UTXO state is
     // final, retrying [update_balance] call will have no effect on this UTXO.
     Tainted: Utxo;
-    // The UTXO passed the KYT check, but the minter failed to mint SU$D
+    // The UTXO passed the KYT check, but the minter failed to mint $RNT
     // because the Ledger was unavailable. Retrying the [update_balance] call
     // should eventually advance the UTXO to the [Minted] state.
     Checked: Utxo;
-    // The UTXO passed the KYT check, and SU$D has been minted.
+    // The UTXO passed the KYT check, and $RNT has been minted.
     Minted: record {
         block_index : nat64;
         minted_amount : nat64;
@@ -196,12 +196,12 @@ service : (network, MinterArg) -> {
     }) -> (transaction_id);
 
     // Returns the bitcoin address to which the user should send BTC
-    // to get SU$D using the [update_balance] endpoint.
+    // to get $RNT using the [update_balance] endpoint.
     "get_box_address": (record {
       ssi: bitcoin_address
     }) -> (bitcoin_address);
 
-    // Mints SU$D for newly deposited UTXOs.
+    // Mints $RNT for newly deposited UTXOs.
     //
     // If the transaction owner is not set, it defaults to the caller's principal.
     //

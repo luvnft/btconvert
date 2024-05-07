@@ -18,7 +18,7 @@ import { $bitcoin_addresses } from '../../../src/store/bitcoin-addresses'
 import { VaultPair } from '../../../src/types/vault'
 import { SSIVault, VaultDirection } from '../../../src/mixins/vault'
 
-import icoSU$D from '../../../src/assets/icons/ssi_SU$D_iso.svg'
+import ico$RNT from '../../../src/assets/icons/ssi_$RNT_iso.svg'
 import { $xr } from '../../../src/store/xr'
 import { $btc_wallet, $syron } from '../../../src/store/syron'
 import { unisatApi } from '../../../src/utils/unisat/api'
@@ -282,7 +282,7 @@ export var ConfirmBox: React.FC<Prop> = function ({
         await getSUSD(btc_wallet?.btc_addr!, tx_id)
             .then(async (tx) => {
                 if (tx) {
-                    console.log('Get SU$D ICP ID', tx)
+                    console.log('Get $RNT ICP ID', tx)
                     // dispatch(setTxStatusLoading('confirmed'))
                 }
             })
@@ -619,7 +619,7 @@ export var ConfirmBox: React.FC<Prop> = function ({
                                                         pair[1].meta.symbol ===
                                                         'BTC'
                                                             ? icoBTC
-                                                            : icoSU$D
+                                                            : ico$RNT
                                                     }
                                                     alt={pair[1].meta.symbol}
                                                     lazyRoot={
@@ -643,7 +643,7 @@ export var ConfirmBox: React.FC<Prop> = function ({
                                         src={
                                             pair[1].meta.symbol === 'BTC'
                                                 ? icoBTC
-                                                : icoSU$D
+                                                : ico$RNT
                                         }
                                         alt={pair[1].meta.symbol}
                                         lazyRoot={lazyRoot as unknown as string}
@@ -696,7 +696,7 @@ export var ConfirmBox: React.FC<Prop> = function ({
                             ) : (
                                 // <>
                                 //     {btc_wallet != null
-                                //         ? 'get su$d'
+                                //         ? 'get $rnt'
                                 //         : 'connect wallet'}
                                 // </>
                                 'confirm'

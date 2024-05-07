@@ -5,7 +5,7 @@ import Image from 'next/image'
 import tydradexSvg from '../../../src/assets/icons/ssi_tydradex.svg'
 import { CryptoState } from '../../../src/types/vault'
 import icoBTC from '../../../src/assets/icons/bitcoin.png'
-import icoSU$D from '../../../src/assets/icons/ssi_SU$D_iso.svg'
+import ico$RNT from '../../../src/assets/icons/ssi_$RNT_iso.svg'
 
 Big.PE = 999
 
@@ -33,7 +33,7 @@ export const TransactionOutput: React.FC<Prop> = ({ amount, token }) => {
                         </div>
                         <div className={styles.output}>
                             <Image
-                                src={token.symbol === 'BTC' ? icoBTC : icoSU$D}
+                                src={token.symbol === 'BTC' ? icoBTC : ico$RNT}
                                 alt={token.symbol}
                                 key={token.symbol}
                                 height="35"

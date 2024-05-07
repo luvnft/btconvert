@@ -74,7 +74,7 @@ export const SyronForm: React.FC<Prop> = ({ startPair }) => {
                     //setPair(unLinkedPair)
                     //@ssibrowsers
 
-                    const amount = vault.computeSU$D(unLinkedPair, xr.rate)
+                    const amount = vault.compute$RNT(unLinkedPair, xr.rate)
                     unLinkedPair[1].value = amount
 
                     setPair(unLinkedPair)

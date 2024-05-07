@@ -71,7 +71,7 @@ export const getUniSat = async (url: string, params?: any) => {
     //       "inscriptions": [
     //         {
     //           "inscriptionNumber": 48107204,
-    //           "inscriptionId": "4b3f67dc18d10581edb237a1de3035a455cea2bf5d674babc1c2fb3c50385c44i0",
+    //           "inscriptionId": "cbd92fc775c42b08955fbf6266f3d2c31fbb71ca04ec9a4d2ef17985d795345bi0",
     //           "offset": 0,
     //           "moved": false,
     //           "sequence": 0,
@@ -85,7 +85,7 @@ export const getUniSat = async (url: string, params?: any) => {
     //     "offset": 0,
     //     "inscriptionIndex": 0,
     //     "inscriptionNumber": 48107204,
-    //     "inscriptionId": "4b3f67dc18d10581edb237a1de3035a455cea2bf5d674babc1c2fb3c50385c44i0",
+    //     "inscriptionId": "cbd92fc775c42b08955fbf6266f3d2c31fbb71ca04ec9a4d2ef17985d795345bi0",
     //     "hasPointer": false,
     //     "hasParent": false,
     //     "hasDeligate": false,
